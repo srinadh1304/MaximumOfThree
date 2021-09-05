@@ -11,23 +11,8 @@ public class MaximumOfThree {
 		findMaximum(firstString, secondString, thirdString);
 	}
 
-	public static void findMaximum(Integer firstNumber, Integer secondNumber, Integer thirdNumber) {
-		Integer maximumNumber;
-
-		if(firstNumber.compareTo(secondNumber)>0 && firstNumber.compareTo(thirdNumber)>0) {
-			maximumNumber = firstNumber;
-		}
-		else if(secondNumber.compareTo(firstNumber)>0 && secondNumber.compareTo(thirdNumber)>0) {
-			maximumNumber = secondNumber;
-		}
-		else {
-			maximumNumber = thirdNumber;
-		}
-
-		System.out.println("The maximum number is: " + maximumNumber);
-	}
-	public static void findMaximum(Float firstNumber, Float secondNumber, Float thirdNumber) {
-		Float maximumNumber;
+	public static <T extends Comparable<T>> void findMaximum(T firstNumber, T secondNumber, T thirdNumber) {
+		T maximumNumber;
 		
 		if(firstNumber.compareTo(secondNumber)>0 && firstNumber.compareTo(thirdNumber)>0) {
 			maximumNumber = firstNumber;
@@ -40,21 +25,6 @@ public class MaximumOfThree {
 		}
 		
 		System.out.println("The maximum number is: " + maximumNumber);
-	}
-	public static void findMaximum(String firstString, String secondString, String thirdString) {
-		String maximumString;
-		
-		if(firstString.compareTo(secondString)>0 && firstString.compareTo(thirdString)>0) {
-			maximumString = firstString;
-		}
-		else if(secondString.compareTo(firstString)>0 && secondString.compareTo(thirdString)>0) {
-			maximumString = secondString;
-		}
-		else {
-			maximumString = thirdString;
-		}
-		
-		System.out.println("The maximum number is: " + maximumString);
 	}
 
 }
