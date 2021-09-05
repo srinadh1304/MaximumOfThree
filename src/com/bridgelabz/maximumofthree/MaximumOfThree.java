@@ -1,16 +1,18 @@
 package com.bridgelabz.maximumofthree;
+public class MaximumOfThree<T extends Comparable<T>> {
 
-public class MaximumOfThree {
-	public static void main(String args[]) {
-		System.out.println("******* Welcome to Maximum of Three Program *******");
-		Integer firstNumber = 34, secondNumber = 201, thirdNumber = 25;
-		findMaximum(firstNumber, secondNumber, thirdNumber);
-		Float number1 = 1.2f, number2 = 8.12f, number3 = 17.44f;
-		findMaximum(number1, number2, number3);
-		String firstString = "Apple", secondString = "Banana", thirdString = "Peach";
-		findMaximum(firstString, secondString, thirdString);
+	T toCompare1, toCompare2, toCompare3;
+	
+	public MaximumOfThree(T tocompare1, T tocompare2, T tocompare3) {
+		this.toCompare1 = tocompare1;
+		this.toCompare2 = tocompare2;
+		this.toCompare3 = tocompare3;
 	}
 
+	public void testMaximum() {
+		MaximumOfThree.findMaximum(this.toCompare1, this.toCompare2, this.toCompare3);
+	}
+	
 	public static <T extends Comparable<T>> void findMaximum(T firstNumber, T secondNumber, T thirdNumber) {
 		T maximumNumber;
 		
@@ -26,5 +28,22 @@ public class MaximumOfThree {
 		
 		System.out.println("The maximum number is: " + maximumNumber);
 	}
+	
+	
+	
+	public static void main(String[] args) {
+
+		System.out.println("****** Welcome To Computing Maximum Of Three Program ******");
+
+		Integer firstNumber = 35, secondNumber = 20, thirdNumber = 125;
+		Float number1 = 1.2f, number2 = 8.12f, number3 = 17.44f;
+		String firstString = "Peach", secondString = "Banana", thirdString = "Apple";
+		
+		new MaximumOfThree<Integer>(firstNumber, secondNumber, thirdNumber).testMaximum();
+		new MaximumOfThree<Float>(number1, number2, number3).testMaximum();
+		new MaximumOfThree<String>(firstString, secondString, thirdString).testMaximum();
+		
+	}
+
 
 }
