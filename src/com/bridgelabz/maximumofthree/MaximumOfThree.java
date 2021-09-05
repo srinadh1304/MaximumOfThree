@@ -7,6 +7,8 @@ public class MaximumOfThree {
 		findMaximum(firstNumber, secondNumber, thirdNumber);
 		Float number1 = 1.2f, number2 = 8.12f, number3 = 17.44f;
 		findMaximum(number1, number2, number3);
+		String firstString = "Apple", secondString = "Banana", thirdString = "Peach";
+		findMaximum(firstString, secondString, thirdString);
 	}
 
 	public static void findMaximum(Integer firstNumber, Integer secondNumber, Integer thirdNumber) {
@@ -38,6 +40,21 @@ public class MaximumOfThree {
 		}
 		
 		System.out.println("The maximum number is: " + maximumNumber);
+	}
+	public static void findMaximum(String firstString, String secondString, String thirdString) {
+		String maximumString;
+		
+		if(firstString.compareTo(secondString)>0 && firstString.compareTo(thirdString)>0) {
+			maximumString = firstString;
+		}
+		else if(secondString.compareTo(firstString)>0 && secondString.compareTo(thirdString)>0) {
+			maximumString = secondString;
+		}
+		else {
+			maximumString = thirdString;
+		}
+		
+		System.out.println("The maximum number is: " + maximumString);
 	}
 
 }
